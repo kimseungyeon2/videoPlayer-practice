@@ -13,7 +13,7 @@
     private $db;
     function __construct(){
       try {
-        $this->db = new PDO("mysql:host=localhost;port=3307;dbname=project","root","0000");
+        $this->db = new PDO("mysql:host=localhost;port=-;dbname=-","-","-");
         $this->db->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
       } catch (PDOException $e) {
         exit($e->getMessage());
@@ -25,7 +25,7 @@
         $pstmt=$this->db->prepare($sql);
         $pstmt->bindValue(":id",$id,PDO::PARAM_STR);
         $pstmt->execute();
-        $result = $pstmt->fetchAll(PDO::FETCH_ASSOC);//PDO::FETCH_ASSOC keyWord로 던져주세요 라는 뜻임
+        $result = $pstmt->fetchAll(PDO::FETCH_ASSOC);
 
       } catch (PDOException $e) {
         exit($e->getMessage());
