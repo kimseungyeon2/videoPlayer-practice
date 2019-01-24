@@ -1,0 +1,7 @@
+.bashrc
+composer.json
+composer.lock
+MyProject-test.json
+test.php
+test3.php
+vendor/

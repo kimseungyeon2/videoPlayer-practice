@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>video</title>
+  </head>
+  <body>
+    <div style="text-align:center">
+      <video id="video" width="420" controls>
+        <source src="./video/video.mp4" type="video/mp4">
+        <source src="./video/video.mkv" type="video/mkv">
+        <source src="./video/video.ogg" type="video/ogg">
+        Your browser does not support HTML5 video.
+      </video>
+    </div>
+    <hr>
+    <div class="videoPlayer_box" style="text-align:center">
+      <div class="">
+        <button id="videoBig" type="button" name="button">Big</button>
+        <button id="videoNormal" type="button" name="button">Normal</button>
+        <button id="videoSmall" type="button" name="button">Small</button>
+      </div>
+      <div class="">
+        <label for="">PlayBar</label>
+        <input id="seekBar" type="range" name="seekBar" value="0">
+        <label for="">Play(on/off)</label>
+        <button id="video_play" type="button" name="button">Play</button>
+        <label for="">Loop(on/off)</label>
+        <button id="video_loop" type="button" name="button">Play</button>
+      </div>
+      <div class="">
+        <label>audioBar</label>
+        <input id="audioBar" type="range" name="" value="0">
+        <label for="">audio(on/off)</label>
+        <button id="video_audio" type="button" name="button">on</button>
+      </div>
+      <div class="">
+        <label for="">speedBar</label>
+        <input id="speedBar" type="range" name="speedBar" value="0">
+      </div>
+      <hr>
+      <div class="">
+        <label for="">TextBox</label>
+        <br>
+        <textarea id="videoText" name="name" rows="8" cols="80"></textarea>
+        <div id="text_box">
+
+        </div>
+        <br>
+        <label for="">textBox(hidden/visible)</label>
+        <button id="textCheck" type="button" name="button">on</button>
+        <label for="">textLoop</label>
+        <button id="textLoop" type="button" name="button">play</button>
+      </div>
+      <hr>
+      <label for="">videoCapture</label>
+      <div class="">
+        <!-- capture button -->
+        <button id="capture" type="button" name="button">capture</button>
+        <!-- canvase -->
+        <canvas id="canvas" width="600" height="300" style="display:none;">
+        </canvas>
+        <p>Image:</p>
+        <img id="image">
+        <br>
+        <!-- save button -->
+        <button id="save" type="button" name="button">save</button>
+      </div>
+    </div>
+    <!-- jquery -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <!-- javaScript code -->
+    <script src="videoPlayer.js" type="text/javascript"></script>
+    <script src="videoText.js" type="text/javascript"></script>
+    <script type="text/javascript" src="videoCapture.js"></script>
+  </body>
+</html>
