@@ -10,21 +10,7 @@ let speedBar = document.getElementById("speedBar");
 let start = 0; //loop start time
 let end = 0; //loop end time
 let check = true; //loop play/stop
-/*
-  video size
-*/
-//Big
-document.getElementById("videoBig").addEventListener("click",function(){
-  video.width = 1000;
-});
-//Small
-document.getElementById("videoSmall").addEventListener("click",function(){
-  video.width = 300;
-});
-//Normal
-document.getElementById("videoNormal").addEventListener("click",function(){
-  video.width = 450;
-});
+
 /*
   video play and stop method
 */
@@ -32,9 +18,11 @@ function playPause() {
   if (video.paused) {
     video.play();
     play.innerHTML = "Play";
+    play.style.background = "black";
   } else {
     video.pause();
     play.innerHTML = "Stop";
+    play.style.background = "red";
   }
 }
 //evnet
@@ -91,7 +79,6 @@ seekBar.addEventListener("dblclick", function(evt) {
 seekBar.addEventListener("mousedown", function(evt) {
   switch (evt.which) {
     case 2:
-      video.pause();
     case 3:
       console.log("2");
       end = seekBar.value;
@@ -122,17 +109,23 @@ loop.addEventListener("click", function(evt) {
   audio and audioBar
 */
 //audio event
-audio.addEventListener("click", function() {
+let firstValue_audio;//auidoBar.vlaue check value;
+audio.addEventListener("click", function(){
   if (video.muted == false) {
+    firstValue_audio = audioBar.value;
     // video audieo on
     video.muted = true;
     // btn text update
+    audioBar.value = 1;
     audio.innerHTML = "on";
+    audio.style.background = "red";
   } else {
     // video audieo off
     video.muted = false;
     // audieo off
+    audioBar.value = firstValue_audio;
     audio.innerHTML = "off";
+    audio.style.background = "rgb(224, 56, 238)";
   }
 });
 //audioBar event

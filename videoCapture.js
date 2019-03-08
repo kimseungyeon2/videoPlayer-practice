@@ -8,7 +8,7 @@ let image = $("#image");
 function capture_draw(){
   let ctx = canvas[0].getContext("2d");
   let img = $("#video");
-  ctx.drawImage(img[0], 5, 5);
+  ctx.drawImage(img[0], 10, 10);
   image[0].src = canvas[0].toDataURL("image/png");
 }
 function save(){
