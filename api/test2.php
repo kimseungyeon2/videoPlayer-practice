@@ -7,7 +7,7 @@
   {
     $language = new LanguageClient([
         'projectId' => $projectId,
-        'keyFilePath' => 'MyProject-test.json'
+        'keyFilePath' => '***'
     ]);
 
     $annotation = $language->analyzeSyntax($text);
@@ -16,7 +16,7 @@
   }
 
   $text = isset($_REQUEST["data"])?$_REQUEST["data"]:"";
-  $projectId = 'my-project-test-229113';
+  $projectId = '***';
   $tokens = analyze_syntax($text, $projectId);
   echo json_encode($tokens);
  ?>

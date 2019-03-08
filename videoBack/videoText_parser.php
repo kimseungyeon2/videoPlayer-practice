@@ -1,23 +1,4 @@
 <?php
-  /*
-    srt file parser basic
-  */
-  // namespace Google\Cloud\Samples\Language;
-  // require '../api/vendor/autoload.php';
-  // use Google\Cloud\Language\LanguageClient;
-  //
-  // function analyze_syntax($text, $projectId = null)
-  // {
-  //   $language = new LanguageClient([
-  //       'projectId' => $projectId,
-  //       'keyFilePath' => '../api/MyProject-test.json'
-  //   ]);
-  //
-  //   $annotation = $language->analyzeSyntax($text);
-  //   return $tokens = $annotation->tokens();
-  //
-  // }
-
   $arr = file('../video/word.srt');
 
   $arr_total = array();
@@ -56,16 +37,6 @@
       $arr_total_create[$i][1][$s] = $time[0] + $time[1] + $time[2][0] + (int)$time[2][1]/1000;
     }
   }
-
-  // $projectId = 'my-project-test-229113';
-  // for ($i=0; $i <count($arr_total_create); $i++) {
-  //   for ($s=2; $s <count($arr_total_create[$i]); $s++) {
-  //     $text = $arr_total_create[$i][$s];
-  //     $tokens = analyze_syntax($text, $projectId);
-  //     $arr_total_create[$i][$s] = $tokens;
-  //   }
-  // }
-  // echo json_encode($tokens[0]);
 
   echo json_encode($arr_total_create);
 
